@@ -20,7 +20,7 @@ body {
 .image-bg-fluid-height {
 	background: url('picture_1.jpg') no-repeat center center scroll;
     height: 600px;
-
+}
 .image-bg-fixed-height {
 	background: url('picture_2.jpeg') no-repeat center center scroll;
     height: 600px;
