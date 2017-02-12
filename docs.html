@@ -43,7 +43,7 @@
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <!-- Collect the nav links, forms, and other content for toggling -->
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav no_bullets">
                     <li>
                         <a href="index.html">Home</a>
                     </li>
@@ -64,26 +64,44 @@
   </p></div>
 
 <blockquote>
-    bypass is a 2-factor-authentication solution for purchases through voice controlled devices such as Alexa or Google Home. Thanks to our solution we will provide you with a dynamic code generated each time you have a request that needs protection and security on you personal phone. You will be able to say it aloud without any fears to confirm your purchases. 
+    bypass is a 2-factor-authentication solution for purchases through voice controlled devices such as Alexa or Google Home. Thanks to our solution we provide you with an easy to implement solution that provides a dynamically generated code that is sent to your phone via sms each time you have a request that needs protection and security.  
   </blockquote>
-  <p class="latestver">
-    <strong>Latest Version:</strong>
-    <a href="http://pypi.python.org/pypi/Flask/0.12" title="Download tarball">0.12</a>
-  </p><h2>bypass is crazy man</h2>
-  <pre><span class="ig">from flask import Flask
-app = Flask(__name__)</span>
-
-@app.route("/")
-def hello():
-    return "Hello World!"
-
-<span class="ig">if __name__ == "__main__":
-    app.run()</span></pre>
-  <h2>& easy to setup</h2>
-  <pre><span class="ig">$ </span>pip install Flask
-<span class="ig">$ </span>python hello.py
+  <h2>bypass is your friend when it comes to 2-factor authentication</h2>
+  <p>It is easy to implement. we have abstracted all of the difficult work using <a href="www.flowroute.com">flowroute</a> and providing an easy to use python module. </br></br>Its as easy as this flask tutorial</p>
+  <h4>download the source code from github</h4>
+  <a href="https://github.com/bypass-auth2/bypass_auth"> bypass-auth </a>
+  <p>place the source code into your alexa skills directory</p>
+  <h4>update your python modules using the requirements module</h4>
+  <p>1. set up a virtualenvironment for your project</p>
+  <p>2. migrate to the bypass-auth folder</p>
+  <p>3. install the requirements</p>
+  <pre>
+    <span class="ig">$ pip install -r requirements.txt</span></pre>
+  <p>4. retrieve your users phone number from your database (amazon linked accounts tutorial below)</br>https://developer.amazon.com/blogs/post/Tx3CX1ETRZZ2NPC/Alexa-Account-Linking-5-Steps-to-Seamlessly-Link-Your-Alexa-Skill-with-Login-wit</p>
+  <p>receiving linked accounts requires your skill to be accepted first, for development, you can hard code in a test number or use a dummy account. the xample below uses Flask-sqlalchemy</p> 
+  <pre><span class="ig">
+    user = User.query.filter_by(userid='#######').first()
+    phone_number = user.phone_number
+    </span></pre>
+  <p>5. Add the code into your main routing file and save what the method returns</p>
+  <pre>
+  <span class="ig">pass_code = bypass_sms.send_auth(phone_number)</span></pre>
+  <p>6. Configure your auth service to receive your variables in the config file</p>
+  <p>This includes your:</p>
+  <ul class="no_bullets">
+    <li>flowroute access key</li>
+    <li>flowroute secret key</li>
+    <li>flowroute number</li>
+  </ul>
+  <pre>
+    <span class="ig">
+    #configuration.py
+    USERNAME = '##########'
+    PASSWORD = '18###88ec#####d#########f7cab5'
+    from_number = '15104050151'</span></pre>
+  <h4>Now to run!</h4>
+  <pre><span class="ig">$ </span>python main.py
 <span class="ig"> * Running on http://localhost:5000/</span></pre>
-  <iframe src="http://ghbtns.com/github-btn.html?user=mitsuhiko&amp;repo=flask&amp;type=watch&amp;count=true&amp;size=large" width="190" height="35" style="float: right;border: none"></iframe>
   
   </p><p class="footer">
     © Copyright 2017 by <a href="http://lucumr.pocoo.org/">Alexander Matheson</a> & 
