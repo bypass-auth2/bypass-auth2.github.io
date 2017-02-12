@@ -1,38 +1,18 @@
-<html><script type="text/javascript">window["_gaUserPrefs"] = { ioo : function() { return true; } }</script>
-<meta charset="utf-8">
-<link rel="stylesheet" type="text/css" href="style.css">
-<link rel="shortcut icon" href="/static/favicon.ico">
+<html lang="en"><script type="text/javascript">window["_gaUserPrefs"] = { ioo : function() { return true; } }</script><head>
 
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-  <style type="text/css">
-    h1 { margin: 0 0 30px 0; background: url(bypass_logo.png) no-repeat center; height: 165px; }
-    h1 span, p.tagline { display: none; }
-  </style>
-  <script type="text/javascript">
-    $(function() {
-      $('h1').bind('mousedown contextmenu', function(event) {
-        if (event.button != 2)
-          return;
-        var box = $('div.logohint');
-        if (!box.is(':visible'))
-          box.animate({'height': 'show', 'opacity': 'show'}, 100);
-        event.preventDefault();
-        event.returnValue = false;
-        return false;
-      });
-    });
-  </script>
+    <title>Full Width Pics - Start Bootstrap Template</title>
 
-</head>
-<body data-pinterest-extension-installed="cr2.0.5" cz-shortcut-listen="true"><div class="box">
-  
-  
-    <h1><span>Welcome</span></h1>
-  
+    <!-- Bootstrap Core CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="home.css" type="text/css" rel="stylesheet">
+    <link href=home.css" type="text/css" rel="stylesheet">
 
 </head>
 
@@ -44,7 +24,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="home.html">Home</a>
+                        <a href="docs.html">Documentation</a>
                     </li>
                 </ul>
             <!-- /.navbar-collapse -->
@@ -54,37 +34,62 @@
         <!-- /.container -->
     </nav>
 
-  <p class="tagline">because sometimes a pocket knife is not enough
-  </p><div class="logohint" style="display: none">
-    <p>
-      
-    </p><p>
-      Quicklinks: <a href="bypass_logo.png">PNG</a>
-  </p></div>
+    <!-- Full Width Image Header with Logo -->
+    <!-- Image backgrounds are set within the full-width-pics.css file. -->
+    <header 
+        class="image-bg-fluid-height">
+    </header>
 
-<blockquote>
-    bypass is a 2-factor-authentication solution for purchases through voice controlled devices such as Alexa or Google Home. Thanks to our solution we will provide you with a dynamic code generated each time you have a request that needs protection and security on you personal phone. You will be able to say it aloud without any fears to confirm your purchases. 
-  </blockquote>
-  <p class="latestver">
-    <strong>Latest Version:</strong>
-    <a href="http://pypi.python.org/pypi/Flask/0.12" title="Download tarball">0.12</a>
-  </p><h2>bypass is crazy man</h2>
-  <pre><span class="ig">from flask import Flask
-app = Flask(__name__)</span>
+    <!-- Content Section -->
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="lead section-lead">Most of the time you are not alone at home and you want the convenience to securely buy or order stuff by voice without sharing your only password or resetting it immediately for security reasons.
+                    <h1 class="section-heading">We are making voice requests safer with 2-factor-authenticationg</h1>
+                
+                    
+</p>
+                </div>
+            </div>
+        </div>
+        </section>
 
-@app.route("/")
-def hello():
-    return "Hello World!"
 
-<span class="ig">if __name__ == "__main__":
-    app.run()</span></pre>
-  <h2>& easy to setup</h2>
-  <pre><span class="ig">$ </span>pip install Flask
-<span class="ig">$ </span>python hello.py
-<span class="ig"> * Running on http://localhost:5000/</span></pre>
-  <iframe src="http://ghbtns.com/github-btn.html?user=mitsuhiko&amp;repo=flask&amp;type=watch&amp;count=true&amp;size=large" width="190" height="35" style="float: right;border: none"></iframe>
-  
-  </p><p class="footer">
-    © Copyright 2017 by <a href="http://lucumr.pocoo.org/">Alexander Matheson</a> & 
-    <a href="http://mickatouillaud.com/">Micka Touillaud</a>
-</p></div></body></html>
+    <aside class="image-bg-fixed-height"></aside>
+
+
+
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="section-paragraph">Thanks to our solution we will provide you with a dynamic code generated each time you have a request that needs protection and security on you personal phone. You will be able to say it aloud without any fears to confirm your purchases.</p>
+                </div>
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p> © Copyright 2017 by <a href="http://lucumr.pocoo.org/">Alexander Matheson</a> & 
+    <a href="http://mickatouillaud.com/">Micka Touillaud</a></p>
+                </div>
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </footer>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body></html>
