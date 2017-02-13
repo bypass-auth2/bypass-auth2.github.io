@@ -1,51 +1,52 @@
-<html>
-<script type="text/javascript">window["_gaUserPrefs"] = { ioo : function() { return true; } }</script>
-<meta charset="utf-8">
-<link rel="stylesheet" type="text/css" href="style.css">
-<link rel="shortcut icon" href="/static/favicon.ico">
+<<!DOCTYPE html>
+<html lang="en">
+    <script type="text/javascript">window["_gaUserPrefs"] = { ioo : function() { return true; } }</script>
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>bypass</title>
+
+        <!-- fonts -->
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'  type='text/css'>
+
+        <!-- Bootstrap Core CSS -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom CSS -->
+        <link href="home.css" type="text/css" rel="stylesheet">
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico?">
+
+    </head>
 
 
   <style type="text/css">
-    h1 { margin: 0 0 30px 0; background: url(bypass_logo.png) no-repeat center; height: 165px; }
+    h1 { margin: 60px 0 30px 0; background: url(bypass_logo.png) no-repeat center; height: 165px; }
     h1 span, p.tagline { display: none; }
   </style>
-  <script type="text/javascript">
-    $(function() {
-      $('h1').bind('mousedown contextmenu', function(event) {
-        if (event.button != 2)
-          return;
-        var box = $('div.logohint');
-        if (!box.is(':visible'))
-          box.animate({'height': 'show', 'opacity': 'show'}, 100);
-        event.preventDefault();
-        event.returnValue = false;
-        return false;
-      });
-    });
-  </script>
-
-</head>
-<body data-pinterest-extension-installed="cr2.0.5" cz-shortcut-listen="true"><div class="box">
-  
-  
-    <h1><span>Welcome</span></h1>
-  
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="home.css" type="text/css" rel="stylesheet">
-
-</head>
 
 <body>
+  <div class="box">
+    <h1><span>Welcome</span></h1>
+  </div>
 
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
+            <a class="navbar-brand" href="#">bypass</a>
             <!-- Collect the nav links, forms, and other content for toggling -->
-                <ul class="nav navbar-nav no_bullets">
-                    <li>
+                <ul class="nav navbar-nav">
+                    <li class="nav-item">
                         <a href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="docs.html">Documentation</a>
                     </li>
                 </ul>
             <!-- /.navbar-collapse -->
@@ -55,55 +56,58 @@
         <!-- /.container -->
     </nav>
 
-  <p class="tagline">because sometimes a pocket knife is not enough
-  </p><div class="logohint" style="display: none">
-    <p>
-      
-    </p><p>
-      Quicklinks: <a href="bypass_logo.png">PNG</a>
-  </p></div>
+    <div class="col-lg-6 col-lg-offset-3">
+    </p><div class="logohint" style="display: none">
+      <p>
+        
+      </p><p>
+        Quicklinks: <a href="bypass_logo.png">PNG</a>
+    </p></div>
 
-<blockquote>
-    bypass is a 2-factor-authentication solution for purchases through voice controlled devices such as Alexa or Google Home. Thanks to our solution we provide you with an easy to implement solution that provides a dynamically generated code that is sent to your phone via sms each time you have a request that needs protection and security.  
-  </blockquote>
-  <h2>bypass is your friend when it comes to 2-factor authentication</h2>
-  <p>It is easy to implement. we have abstracted all of the difficult work using <a href="www.flowroute.com">flowroute</a> and providing an easy to use python module. </br></br>Its as easy as this flask tutorial</p>
-  <h4>download the source code from github</h4>
-  <a href="https://github.com/bypass-auth2/bypass_auth"> bypass-auth </a>
-  <p>place the source code into your alexa skills directory</p>
-  <h4>update your python modules using the requirements module</h4>
-  <p>1. set up a virtualenvironment for your project</p>
-  <p>2. migrate to the bypass-auth folder</p>
-  <p>3. install the requirements</p>
-  <pre>
-    <span class="ig">$ pip install -r requirements.txt</span></pre>
-  <p>4. retrieve your users phone number from your database (amazon linked accounts tutorial below)</br>https://developer.amazon.com/blogs/post/Tx3CX1ETRZZ2NPC/Alexa-Account-Linking-5-Steps-to-Seamlessly-Link-Your-Alexa-Skill-with-Login-wit</p>
-  <p>receiving linked accounts requires your skill to be accepted first, for development, you can hard code in a test number or use a dummy account. the xample below uses Flask-sqlalchemy</p> 
-  <pre><span class="ig">
-    user = User.query.filter_by(userid='#######').first()
-    phone_number = user.phone_number
-    </span></pre>
-  <p>5. Add the code into your main routing file and save what the method returns</p>
-  <pre>
-  <span class="ig">pass_code = bypass_sms.send_auth(phone_number)</span></pre>
-  <p>6. Configure your auth service to receive your variables in the config file</p>
-  <p>This includes your:</p>
-  <ul class="no_bullets">
-    <li>flowroute access key</li>
-    <li>flowroute secret key</li>
-    <li>flowroute number</li>
-  </ul>
-  <pre>
-    <span class="ig">
-    #configuration.py
-    USERNAME = '##########'
-    PASSWORD = '18###88ec#####d#########f7cab5'
-    from_number = '15104050151'</span></pre>
-  <h4>Now to run!</h4>
-  <pre><span class="ig">$ </span>python main.py
-<span class="ig"> * Running on http://localhost:5000/</span></pre>
-  
-  </p><p class="footer">
-    © Copyright 2017 by <a href="http://lucumr.pocoo.org/">Alexander Matheson</a> & 
-    <a href="http://mickatouillaud.com/">Micka Touillaud</a>
-</p></div></body></html>
+  <blockquote>
+      bypass is a 2-factor-authentication solution for purchases through voice controlled devices such as Alexa or Google Home. Thanks to our solution we provide you with an easy to implement solution that provides a dynamically generated code that is sent to your phone via sms each time you have a request that needs protection and security.  
+    </blockquote>
+    <h2>bypass is your friend when it comes to 2-factor authentication</h2>
+    <p>It is easy to implement. we have abstracted all of the difficult work using <a href="www.flowroute.com">flowroute</a> and providing an easy to use python module. </br></br>Its as easy as this flask tutorial</p>
+    <h4>download the source code from github</h4>
+    <a href="https://github.com/bypass-auth2/bypass_auth"> bypass-auth </a>
+    <p>place the source code into your alexa skills directory</p>
+    <h4>update your python modules using the requirements module</h4>
+    <p>1. set up a virtualenvironment for your project</p>
+    <p>2. migrate to the bypass-auth folder</p>
+    <p>3. install the requirements</p>
+    <pre>
+      <span class="ig">$ pip install -r requirements.txt</span></pre>
+    <p>4. retrieve your users phone number from your database (amazon linked accounts tutorial below)</br>https://developer.amazon.com/blogs/post/Tx3CX1ETRZZ2NPC/Alexa-Account-Linking-5-Steps-to-Seamlessly-Link-Your-Alexa-Skill-with-Login-wit</p>
+    <p>receiving linked accounts requires your skill to be accepted first, for development, you can hard code in a test number or use a dummy account. the xample below uses Flask-sqlalchemy</p> 
+    <pre><span class="ig">
+      user = User.query.filter_by(userid='#######').first()
+      phone_number = user.phone_number
+      </span></pre>
+    <p>5. Add the code into your main routing file and save what the method returns</p>
+    <pre>
+    <span class="ig">pass_code = bypass_sms.send_auth(phone_number)</span></pre>
+    <p>6. Configure your auth service to receive your variables in the config file</p>
+    <p>This includes your:</p>
+    <ul class="no_bullets">
+      <li>flowroute access key</li>
+      <li>flowroute secret key</li>
+      <li>flowroute number</li>
+    </ul>
+    <pre>
+      <span class="ig">
+      #configuration.py
+      USERNAME = '##########'
+      PASSWORD = '18###88ec#####d#########f7cab5'
+      from_number = '15104050151'</span></pre>
+    <h4>Now to run!</h4>
+    <pre><span class="ig">$ </span>python main.py
+  <span class="ig"> * Running on http://localhost:5000/</span></pre>
+    
+    </p><p class="footer">
+      © Copyright 2017 by <a href="http://lucumr.pocoo.org/">Alexander Matheson</a> & 
+      <a href="http://mickatouillaud.com/">Micka Touillaud</a>
+      </p>
+    </div>
+  </body>
+</html>

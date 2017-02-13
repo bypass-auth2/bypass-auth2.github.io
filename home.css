@@ -27,10 +27,6 @@ body {
     background-size: 900px;
 }
 
-.no_bullets {
-    list-style-type:none !important;
-}
-
 .img-center {
 	margin: 0 auto;
 }
